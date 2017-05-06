@@ -2,11 +2,11 @@
 
 @model ServisAdmin
 
-@{ 
+@{
     Layout = null;
 }
 
-@{ 
+@{
     string obavljenoDaNe;
     if (Model.obavljeno == true)
     {
@@ -27,6 +27,20 @@
 </head>
 
 <body>
+
+    <table>
+
+        <tr>
+            <th>ID servisa</th>
+            <th>Vrijeme servisa</th>
+            <th>Opis posla</th>
+            <th>Napomena</th>
+            <th>Obavljeno</th>
+            <th>Cijena servisa</th>
+        </tr>
+
+    </table>
+
     <div>
         <h2>@ViewBag.Title</h2>
         <h1>ID servisa: @Model.idServisa</h1>

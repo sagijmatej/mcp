@@ -12,6 +12,48 @@ namespace paup_mcp.Models
 
         public ServisiDB()
         {
+            // dodavanje izmišljenih klijenata i vozila
+
+            listaServisa.Add(new ServisAdmin
+            {
+
+                ime = "Ivan", // ime klijenta
+                prezime = "Horvat", // prezime klijenta
+                markaVozila = "Citroen", // marka vozila
+                modelVozila = "Saxo", // model vozila
+                vrstaMotora = "1,6", // vrsta motora
+                godinaProizvodnje = 1998, // godina proizvodnje
+                brojRegistracije = "VŽ333RR" // broj registracije
+
+            });
+
+            listaServisa.Add(new ServisAdmin
+            {
+
+                ime = "Ivan",  // ime klijenta
+                prezime = "Horvat", // prezime klijenta
+                markaVozila = "Peugeot", // marka vozila
+                modelVozila = "206", // model vozila
+                vrstaMotora = "1,2", // vrsta motora
+                godinaProizvodnje = 2001, // godina proizvodnje
+                brojRegistracije = "VŽ222PP" // broj registracije
+
+            });
+
+            listaServisa.Add(new ServisAdmin
+            {
+
+                ime = "Ivan", // ime klijenta
+                prezime = "Perić", // prezime klijenta
+                markaVozila = "Renault", // marka vozila
+                modelVozila = "Megane", // model vozila
+                vrstaMotora = "1,8", // vrsta motora
+                godinaProizvodnje = 1996, // godina proizvodnje
+                brojRegistracije = "ČK434PS" // broj registracije
+
+            });
+
+
             // dodavanje izmišljenih servisa
 
             listaServisa.Add(new ServisAdmin
@@ -26,8 +68,6 @@ namespace paup_mcp.Models
 
             });
 
-            // dodavanje još jednog izmišljenog servisa sa istim atributima
-
             listaServisa.Add(new ServisAdmin
             {
 
@@ -39,8 +79,6 @@ namespace paup_mcp.Models
                 obavljeno = true // posao označen kao kompletno obavljen
 
             });
-
-            // dodavanje još jednog izmišljenog servisa sa istim atributima
 
             listaServisa.Add(new ServisAdmin
             {

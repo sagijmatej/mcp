@@ -43,5 +43,20 @@ namespace paup_mcp.Controllers
             return View(servisiA);
         }
 
+        // pretraživanje klijenata po imenu i prezimenu u bazi
+        public ActionResult traziKlijente(string trazeniString)
+        {
+
+            var popisKlijenata = from klijent in servisiA.VratiServise() select klijent;
+
+            if (!String.IsNullOrEmpty(trazeniString))
+            {
+                popisKlijenata = popisKlijenata.Where(kl => (kl.ime + " " + kl.prezime).ToUpper().Contains(trazeniString.ToUpper()));
+            }
+
+            return View(popisKlijenata);
+
+        }
+
     }
 }
