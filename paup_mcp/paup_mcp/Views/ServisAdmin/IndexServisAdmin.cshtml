@@ -1,0 +1,76 @@
+﻿@using paup_mcp.Models
+@model List<ServisAdmin>
+
+@{ 
+    int brojac = 0;
+}
+
+@*@{
+    Layout = null;
+}*@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    
+    <div>
+        <h2>@ViewBag.Title</h2>
+
+        <p>
+            Za pretraživanje servisa, molimo unesite ime i prezime klijenta te odaberite vozilo.
+        </p>
+
+        @using (Html.BeginForm("Popis klijenata", "ServisAdmin", FormMethod.Get))
+        {
+            <p>
+
+                Ime i prezime: @Html.TextBox("trazeniString")
+                <input type="submit" value="Traži" />
+
+            </p>
+        }
+        <table>
+
+            <tr>
+
+                <th>Rbr</th>
+                <th>Ime</th>
+                <th>Prezime</th>
+
+            </tr>
+
+            @foreach(ServisAdmin sAdmin in listaServisa)
+            {
+                <tr>
+                    <td>@(brojac++)</td>
+                    <td>sAdmin.ime @sAdmin.prezime</td>
+                </tr>
+            }
+
+        </table>
+
+
+
+
+
+
+
+
+
+        @*<p>Odaberite link: </p>
+
+        <ul>
+            <li>@Html.ActionLink("Popis svih servisa", "Popis servisa", "ServisAdmin")</li>
+            <li>@Html.ActionLink("Detaljno o servisima", "ServisAdminDetaljno", "ServisAdmin")</li>
+
+        </ul>*@
+
+    </div>
+
+</body>
+</html>
